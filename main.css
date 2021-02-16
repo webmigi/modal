@@ -1,0 +1,100 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    height: 200vh;
+}
+
+button {
+    outline: none;
+}
+
+img {
+ max-width: 100%;
+}
+
+.row {
+    display: flex;
+    height: 100vh;
+}
+
+.left, .right {
+    width: 50%;
+}
+
+.single-image {
+    padding: 10px 5px 10px 10px;
+}
+
+.single-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px 5px 5px 0;
+}
+
+.gallery .gallery-item {
+    width: calc(50% - 10px);
+    position: relative;
+    margin: 5px;
+}
+
+.gallery .gallery-item:before {
+    display: block;
+    width: 100%;
+    padding-top: 100px;
+    content: ''
+}
+
+.gallery .gallery-item img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/*Style modal modal*/
+.wm-modal {
+    z-index: 100;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0, 0);
+    transition: .5s ease-in-out;
+    display: none;
+    cursor: zoom-out;
+}
+
+.wm-modal.open {
+    background-color: rgba(0,0,0, 0.8);
+}
+
+.wm-gallery {
+    cursor: zoom-in;
+}
+
+.wm-modal-content {
+    width: calc(100% - 100px);
+    height: calc(100% - 100px);
+    margin: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wm-modal-content img {
+    max-height: 100%;
+    max-width: 100%;
+}
